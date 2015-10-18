@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models, migrations
+from django.db import migrations, models
 import feincms.translations
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('media', '0004_flash'),
-        ('filer', '__first__'),
+        ('media', '0003_auto_20150723_1313'),
     ]
 
     operations = [
@@ -32,7 +31,7 @@ class Migration(migrations.Migration):
             name='AttributeOptionTranslation',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('language_code', models.CharField(default=b'cs', max_length=10, verbose_name='language', choices=[(b'cs', b'CS'), (b'en', b'EN')])),
+                ('language_code', models.CharField(default=b'en', max_length=10, verbose_name='language', choices=[(b'en', b'EN'), (b'cs', b'CS')])),
                 ('title', models.CharField(max_length=255, verbose_name='title')),
                 ('summary', models.CharField(max_length=250, verbose_name='summary', blank=True)),
                 ('parent', models.ForeignKey(related_name='translations', to='leonardo_module_folio.AttributeOption')),
@@ -41,7 +40,6 @@ class Migration(migrations.Migration):
                 'verbose_name': 'attribute option translation',
                 'verbose_name_plural': 'attribute option translations',
             },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Category',
@@ -67,7 +65,7 @@ class Migration(migrations.Migration):
             name='CategoryTranslation',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('language_code', models.CharField(default=b'cs', max_length=10, verbose_name='language', choices=[(b'cs', b'CS'), (b'en', b'EN')])),
+                ('language_code', models.CharField(default=b'en', max_length=10, verbose_name='language', choices=[(b'en', b'EN'), (b'cs', b'CS')])),
                 ('title', models.CharField(max_length=255, verbose_name='title')),
                 ('slug', models.SlugField(verbose_name='slug')),
                 ('summary', models.CharField(max_length=250, verbose_name='summary', blank=True)),
@@ -78,7 +76,6 @@ class Migration(migrations.Migration):
                 'verbose_name': 'category text',
                 'verbose_name_plural': 'category texts',
             },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Client',
@@ -99,7 +96,7 @@ class Migration(migrations.Migration):
             name='ClientTranslation',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('language_code', models.CharField(default=b'cs', max_length=10, verbose_name='language', choices=[(b'cs', b'CS'), (b'en', b'EN')])),
+                ('language_code', models.CharField(default=b'en', max_length=10, verbose_name='language', choices=[(b'en', b'EN'), (b'cs', b'CS')])),
                 ('title', models.CharField(max_length=255, verbose_name='title')),
                 ('slug', models.SlugField(verbose_name='slug')),
                 ('summary', models.CharField(max_length=250, verbose_name='summary', blank=True)),
@@ -110,7 +107,6 @@ class Migration(migrations.Migration):
                 'verbose_name': 'client translation',
                 'verbose_name_plural': 'client translations',
             },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Project',
@@ -133,7 +129,7 @@ class Migration(migrations.Migration):
             name='ProjectAttribute',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('languagecode', models.CharField(blank=True, max_length=10, null=True, verbose_name='language', choices=[(b'cs', b'CS'), (b'en', b'EN')])),
+                ('languagecode', models.CharField(blank=True, max_length=10, null=True, verbose_name='language', choices=[(b'en', b'EN'), (b'cs', b'CS')])),
                 ('value', models.CharField(max_length=255, verbose_name='Value')),
                 ('option', models.ForeignKey(to='leonardo_module_folio.AttributeOption')),
                 ('project', models.ForeignKey(to='leonardo_module_folio.Project')),
@@ -143,7 +139,6 @@ class Migration(migrations.Migration):
                 'verbose_name': 'Project attribute',
                 'verbose_name_plural': 'Project attributes',
             },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='ProjectFile',
@@ -152,20 +147,19 @@ class Migration(migrations.Migration):
                 ('ordering', models.IntegerField(null=True, verbose_name='ordering', blank=True)),
                 ('active', models.BooleanField(default=True, verbose_name='active')),
                 ('featured', models.BooleanField(default=True, verbose_name='featured')),
-                ('file', models.ForeignKey(to='filer.File')),
+                ('file', models.ForeignKey(to='media.File')),
                 ('project', models.ForeignKey(to='leonardo_module_folio.Project')),
             ],
             options={
                 'verbose_name': 'Project file',
                 'verbose_name_plural': 'Project files',
             },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='ProjectTranslation',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('language_code', models.CharField(default=b'cs', max_length=10, verbose_name='language', choices=[(b'cs', b'CS'), (b'en', b'EN')])),
+                ('language_code', models.CharField(default=b'en', max_length=10, verbose_name='language', choices=[(b'en', b'EN'), (b'cs', b'CS')])),
                 ('title', models.CharField(max_length=255, verbose_name='title')),
                 ('slug', models.SlugField(verbose_name='slug')),
                 ('summary', models.CharField(max_length=250, verbose_name='summary', blank=True)),
@@ -176,7 +170,6 @@ class Migration(migrations.Migration):
                 'verbose_name': 'project text',
                 'verbose_name_plural': 'project texts',
             },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Service',
@@ -197,7 +190,7 @@ class Migration(migrations.Migration):
             name='ServiceTranslation',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('language_code', models.CharField(default=b'cs', max_length=10, verbose_name='language', choices=[(b'cs', b'CS'), (b'en', b'EN')])),
+                ('language_code', models.CharField(default=b'en', max_length=10, verbose_name='language', choices=[(b'en', b'EN'), (b'cs', b'CS')])),
                 ('title', models.CharField(max_length=255, verbose_name='title')),
                 ('slug', models.SlugField(verbose_name='slug')),
                 ('summary', models.CharField(max_length=250, verbose_name='summary', blank=True)),
@@ -208,25 +201,21 @@ class Migration(migrations.Migration):
                 'verbose_name': 'service translation',
                 'verbose_name_plural': 'service translations',
             },
-            bases=(models.Model,),
         ),
         migrations.AddField(
             model_name='project',
             name='files',
-            field=models.ManyToManyField(to='filer.File', null=True, verbose_name='files', through='leonardo_module_folio.ProjectFile', blank=True),
-            preserve_default=True,
+            field=models.ManyToManyField(to='media.File', verbose_name='files', through='leonardo_module_folio.ProjectFile', blank=True),
         ),
         migrations.AddField(
             model_name='project',
             name='media_category',
-            field=models.ForeignKey(verbose_name='media category', blank=True, to='filer.Folder', null=True),
-            preserve_default=True,
+            field=models.ForeignKey(verbose_name='media category', blank=True, to='media.Folder', null=True),
         ),
         migrations.AddField(
             model_name='project',
             name='services',
-            field=models.ManyToManyField(to='leonardo_module_folio.Service', null=True, verbose_name='services', blank=True),
-            preserve_default=True,
+            field=models.ManyToManyField(to='leonardo_module_folio.Service', verbose_name='services', blank=True),
         ),
         migrations.AlterUniqueTogether(
             name='category',

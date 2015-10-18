@@ -187,11 +187,11 @@ class Project(models.Model, TranslatedObjectMixin):
     categories = models.ManyToManyField(Category, verbose_name=_("categories"))
     client = models.ForeignKey(Client, verbose_name=_("client"), blank=True, null=True)
     files = models.ManyToManyField(
-        File, blank=True, null=True, verbose_name=_("files"), through='ProjectFile')
+        File, blank=True, verbose_name=_("files"), through='ProjectFile')
     media_category = models.ForeignKey(
         Folder, blank=True, null=True, verbose_name=_("media category"))
     services = models.ManyToManyField(
-        Service, blank=True, null=True, verbose_name=_("services"))
+        Service, blank=True, verbose_name=_("services"))
     created = models.DateField(blank=True, null=True)
     featured = models.BooleanField(default=False)
     active = models.BooleanField(default=True)

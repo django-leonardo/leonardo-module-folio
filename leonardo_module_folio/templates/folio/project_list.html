@@ -1,10 +1,10 @@
-{% extends feincms_page.theme.template %}
+{% extends widget.get_base_template %}
 
 {% load i18n %}
 {% load thumbnail %}
-{% load leonardo_tags leonardo_app_url %}
+{% load leonardo_tags leonardo_page_tags %}
 
-{% block body_main %}
+{% block content %}
 {% if object_list %}
 <div class="span-18">
 	<div class="object-grid ui-helper-clearfix">

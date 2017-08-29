@@ -2,13 +2,14 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
+from django import settings
 import feincms.translations
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('media', '0003_auto_20150723_1313'),
+        ('media', '0003_auto_20170829_1614'),
     ]
 
     operations = [
@@ -31,7 +32,7 @@ class Migration(migrations.Migration):
             name='AttributeOptionTranslation',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('language_code', models.CharField(default=b'en', max_length=10, verbose_name='language', choices=[(b'en', b'EN'), (b'cs', b'CS')])),
+                ('language_code', models.CharField(default=settings.LANGUAGE_CODE, verbose_name='language', max_length=10, editable=False, choices=settings.DEFAULT_LANG)),
                 ('title', models.CharField(max_length=255, verbose_name='title')),
                 ('summary', models.CharField(max_length=250, verbose_name='summary', blank=True)),
                 ('parent', models.ForeignKey(related_name='translations', to='leonardo_module_folio.AttributeOption')),
@@ -65,7 +66,7 @@ class Migration(migrations.Migration):
             name='CategoryTranslation',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('language_code', models.CharField(default=b'en', max_length=10, verbose_name='language', choices=[(b'en', b'EN'), (b'cs', b'CS')])),
+                ('language_code', models.CharField(default=settings.LANGUAGE_CODE, verbose_name='language', max_length=10, editable=False, choices=settings.DEFAULT_LANG)),
                 ('title', models.CharField(max_length=255, verbose_name='title')),
                 ('slug', models.SlugField(verbose_name='slug')),
                 ('summary', models.CharField(max_length=250, verbose_name='summary', blank=True)),
@@ -96,7 +97,7 @@ class Migration(migrations.Migration):
             name='ClientTranslation',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('language_code', models.CharField(default=b'en', max_length=10, verbose_name='language', choices=[(b'en', b'EN'), (b'cs', b'CS')])),
+                ('language_code', models.CharField(default=settings.LANGUAGE_CODE, verbose_name='language', max_length=10, editable=False, choices=settings.DEFAULT_LANG)),
                 ('title', models.CharField(max_length=255, verbose_name='title')),
                 ('slug', models.SlugField(verbose_name='slug')),
                 ('summary', models.CharField(max_length=250, verbose_name='summary', blank=True)),
@@ -129,7 +130,7 @@ class Migration(migrations.Migration):
             name='ProjectAttribute',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('languagecode', models.CharField(blank=True, max_length=10, null=True, verbose_name='language', choices=[(b'en', b'EN'), (b'cs', b'CS')])),
+                ('languagecode', models.CharField(blank=True, max_length=10, null=True, verbose_name='language', choices=settings.DEFAULT_LANG)),
                 ('value', models.CharField(max_length=255, verbose_name='Value')),
                 ('option', models.ForeignKey(to='leonardo_module_folio.AttributeOption')),
                 ('project', models.ForeignKey(to='leonardo_module_folio.Project')),
@@ -159,7 +160,7 @@ class Migration(migrations.Migration):
             name='ProjectTranslation',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('language_code', models.CharField(default=b'en', max_length=10, verbose_name='language', choices=[(b'en', b'EN'), (b'cs', b'CS')])),
+                ('language_code', models.CharField(default=settings.LANGUAGE_CODE, verbose_name='language', max_length=10, editable=False, choices=settings.DEFAULT_LANG)),
                 ('title', models.CharField(max_length=255, verbose_name='title')),
                 ('slug', models.SlugField(verbose_name='slug')),
                 ('summary', models.CharField(max_length=250, verbose_name='summary', blank=True)),
@@ -190,7 +191,7 @@ class Migration(migrations.Migration):
             name='ServiceTranslation',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('language_code', models.CharField(default=b'en', max_length=10, verbose_name='language', choices=[(b'en', b'EN'), (b'cs', b'CS')])),
+                ('language_code', models.CharField(default=settings.LANGUAGE_CODE, verbose_name='language', max_length=10, editable=False, choices=settings.DEFAULT_LANG)),
                 ('title', models.CharField(max_length=255, verbose_name='title')),
                 ('slug', models.SlugField(verbose_name='slug')),
                 ('summary', models.CharField(max_length=250, verbose_name='summary', blank=True)),

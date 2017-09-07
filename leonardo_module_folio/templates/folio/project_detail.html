@@ -1,41 +1,79 @@
 {% extends widget.get_base_template %}
 
 {% load i18n %}
-{% load thumbnail %}
+{% load leonardo_tags leonardo_page_tags thumbnail %}
 
 {% block content %}
+
+<style type="text/css">
+.project-image {
+    width: 70%;
+    margin-top: 10px;
+}
+
+.nav-pills li a {
+    color: #333333;
+}
+
+.nav-stacked.second-nav {
+    margin-left: 32px;
+    border-left: 1px solid #333333;
+}
+
+.bold {
+    font-weight: bold;
+}
+.object-text {
+    text-align: center;
+}
+
+.object-text a {
+    color: #333333;
+}
+</style>
+
 <div class="object-detail">
-	<div class="object-meta">
-		{{ object.created|date:"F Y" }}<br />
-		{% for tech in object.services.all %}
-		<abbr>{{ tech.title }}</abbr>
-		{% endfor %}
-	</div>
-	<h2>{{ object }}</h2>
-	
-	{% for file in object.files.all %}
-	<div class="object-image">
-		{% thumbnail file.file "720x480" format="PNG" as image %}
-		<a href="" rel="clearbox[image]"><img src="{{ image.url }}" /></a>
-		{% endthumbnail %}
-	</div>
-	{% endfor %}
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav nav-pills nav-stacked first-nav">
+            {% for category in category_list %}
+                <li class="{% if category.translation.slug in request.path %}bold{% endif %}"><a href="{% app_reverse 'folio_category_detail' 'leonardo_module_folio.apps.folio' category_slug=category.translation.slug %}">{{ category.translation.title }}</a></li>
+                {% if category.translation.slug in request.path %}
+                <ul class="nav nav-pills nav-stacked second-nav">
+                {% for sub_project in category.project_set.all %}
+                    <li class="{% if sub_project.translation.slug in request.path %}bold{% endif %}"><a href="{% app_reverse 'folio_project_detail' 'leonardo_module_folio.apps.folio' category_slug=sub_project.categories.first.translation.slug project_slug=sub_project.translation.slug %}" title="{{ sub_project }}">{{ sub_project }}</a></li>
+                {% endfor %}
+                </ul>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <h1>{{ object.translation.title }}</h1>
+            {% for file in object.files.all %}
+            <div class="object-image">
+                {% thumbnail file.file "720x480" format="PNG" as image %}
+                <a href="" rel="clearbox[image]"><img src="{{ image.url }}" /></a>
+                {% endthumbnail %}
+            </div>
+            {% endfor %}
 
-	{% for file in object.media_category.media.all %}
-	{{ file.file }}
-	{% comment %}
-	<div class="object-image">
-		{% thumbnail file.file "720x480" format="PNG" as image %}
-		<a href="" rel="clearbox[image]"><img src="{{ image.url }}" /></a>
-		{% endthumbnail %}
-	</div>
-	{% endcomment %}
-	{% endfor %}
+            {% for file in object.media_category.media_file_files.all %}
+            <div class="object-image">
+                {% thumbnail file.file "720x480" format="PNG" as image %}
+                <a href="" rel="clearbox[image]"><img class="project-image" src="{{ image.url }}" /></a>
+                {% endthumbnail %}
+            </div>
+            {% endfor %}
 
-	{% if object.translation.description %}
-	<div class="object-text">
-		{{ object.translation.description|safe }}
-	</div>
-	{% endif %}
+            {% if object.translation.description %}
+            <div class="object-text">
+                {{ object.translation.description|safe }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    
 </div>
+
 {% endblock %}

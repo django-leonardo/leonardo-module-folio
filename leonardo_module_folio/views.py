@@ -1,8 +1,20 @@
 # -*- coding: UTF-8 -*-
 
 from django.template.response import SimpleTemplateResponse
-from leonardo_module_folio.models import (Category, Client, Project,
-                                          ProjectTranslation)
+from django.shortcuts import render
+from leonardo_module_folio.models import (Category, CategoryTranslation, Client,
+                                          Project, ProjectTranslation)
+
+
+def category_detail(request, category_slug=None):
+    object = CategoryTranslation.objects.get(slug=category_slug).parent
+    category_list = Category.objects.filter(active=True, parent=None)
+    context = {
+        'object': object,
+        'category_list': category_list,
+        'in_appcontent_subpage': True
+    }
+    return render(request, 'folio/category_detail.html', context)
 
 
 def project_list(request):
@@ -16,15 +28,17 @@ def project_list(request):
         'category_list': category_list,
         'in_appcontent_subpage': True
     }
-    return SimpleTemplateResponse('folio/project_list.html', context)
+    return render(request, 'folio/project_list.html', context)
 
 
-def project_detail(request, project_slug=None):
+def project_detail(request, category_slug=None, project_slug=None):
     object = ProjectTranslation.objects.get(slug=project_slug).parent
-    return SimpleTemplateResponse(
+    category_list = Category.objects.filter(active=True, parent=None)
+    return render(request,
         'folio/project_detail.html',
         {
             'object': object,
+            'category_list': category_list,
             'in_appcontent_subpage': True
         }
     )

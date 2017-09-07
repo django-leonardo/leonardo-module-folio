@@ -79,6 +79,7 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'featured', 'active', 'created', )
     list_filter = ('active', 'featured', 'categories', 'services', )
     filter_horizontal = ('services', 'categories',)
+    search_fields = ['translations__title']
     inlines = [ProjectTranslation_Inline, ProjectAttribute_Inline, ]
 
 admin.site.register(Project, ProjectAdmin)

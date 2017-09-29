@@ -66,6 +66,13 @@
             </div>
             {% endfor %}
 
+            <div class="object-attributes">
+            {% for attribute in object.projectattribute_set.all %}
+                <h4>{{ attribute.option.translation.title }}</h4>
+                <p>{{ attribute.value }}</p>
+            {% endfor %}
+            </div>
+
             {% if object.translation.description %}
             <div class="object-text">
                 {{ object.translation.description|safe }}

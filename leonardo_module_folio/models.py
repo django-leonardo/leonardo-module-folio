@@ -326,7 +326,7 @@ class ProjectAttribute(models.Model):
     value = models.CharField(_("Value"), max_length=255)
 
     def _name(self):
-        return self.option.name
+        return self.option.translation.title
     name = property(_name)
 
     def _description(self):
@@ -339,7 +339,7 @@ class ProjectAttribute(models.Model):
         ordering = ('option__ordering',)
 
     def __unicode__(self):
-        return self.option.name
+        return self.option.translation.title
 
 
 class ProjectFile(models.Model):

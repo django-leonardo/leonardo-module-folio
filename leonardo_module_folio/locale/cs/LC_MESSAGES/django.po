@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-30 11:30+0100\n"
+"POT-Creation-Date: 2017-09-30 14:37+0200\n"
 "PO-Revision-Date: 2011-09-18 02:52\n"
 "Last-Translator: <mail@newt.cz>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,234 +19,198 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.5.5\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n>1 && n<5 ? 1 : 2;\n"
 
-#: models.py:25 models.py:79 models.py:127
+#: models.py:24 models.py:82 models.py:134
 msgid "logo"
 msgstr "logo"
 
-#: models.py:36
+#: models.py:35
 msgid "portfolio category"
 msgstr "portfolio kategorie"
 
-#: models.py:37
+#: models.py:36
 msgid "portfolio categories"
 msgstr "portfolio kategorie"
 
-#: models.py:62 models.py:111 models.py:160 models.py:228 models.py:284
+#: models.py:63 models.py:116 models.py:169 models.py:244 models.py:306
 msgid "title"
 msgstr "název"
 
-#: models.py:63 models.py:112 models.py:161 models.py:229
+#: models.py:64 models.py:117 models.py:170 models.py:245
 msgid "slug"
 msgstr "uri"
 
-#: models.py:64 models.py:113 models.py:162 models.py:230 models.py:285
+#: models.py:65 models.py:118 models.py:171 models.py:246 models.py:307
 msgid "summary"
 msgstr "přehled"
 
-#: models.py:65 models.py:114 models.py:163 models.py:231
+#: models.py:66 models.py:119 models.py:172 models.py:247
 msgid "description"
 msgstr "popis"
 
-#: models.py:68
+#: models.py:69
 msgid "category text"
 msgstr "text"
 
-#: models.py:69
+#: models.py:70
 msgid "category texts"
 msgstr "texty"
 
-#: models.py:84
+#: models.py:87
 msgid "service"
 msgstr "služba"
 
-#: models.py:85 models.py:180
+#: models.py:88 models.py:194
 msgid "services"
 msgstr "služby"
 
-#: models.py:117
+#: models.py:122
 msgid "service translation"
 msgstr "text"
 
-#: models.py:118
+#: models.py:123
 msgid "service translations"
 msgstr "texty"
 
-#: models.py:128 models.py:325
+#: models.py:135 models.py:352
 msgid "ordering"
 msgstr "řazení"
 
-#: models.py:129 models.py:326
+#: models.py:136 models.py:353
 msgid "active"
 msgstr "aktivní"
 
-#: models.py:133 models.py:177
+#: models.py:140 models.py:188
 msgid "client"
 msgstr "klient"
 
-#: models.py:134
-#, fuzzy
+#: models.py:141
 msgid "clients"
-msgstr "klient"
+msgstr "klienti"
 
-#: models.py:166
+#: models.py:175
 msgid "client translation"
 msgstr "text"
 
-#: models.py:167
+#: models.py:176
 msgid "client translations"
 msgstr "texty"
 
-#: models.py:176
+#: models.py:187
 #, fuzzy
 msgid "categories"
 msgstr "Kategorie"
 
-#: models.py:178
+#: models.py:190
 msgid "files"
 msgstr "soubory"
 
-#: models.py:179
+#: models.py:192
 #, fuzzy
 msgid "media category"
 msgstr "kategorie"
 
-#: models.py:189
+#: models.py:203
 msgid "project"
 msgstr "projekt"
 
-#: models.py:190
+#: models.py:204
 msgid "projects"
 msgstr "projekty"
 
-#: models.py:234
+#: models.py:250
 msgid "project text"
 msgstr "text"
 
-#: models.py:235
+#: models.py:251
 msgid "project texts"
 msgstr "texty"
 
-#: models.py:241
+#: models.py:257
 msgid "One or more characters"
 msgstr "Jeden nebo více znaků"
 
-#: models.py:242
+#: models.py:258
 msgid "Integer number"
 msgstr "Celé číslo"
 
-#: models.py:243
+#: models.py:259
 msgid "Yes or No"
 msgstr "Ano nebo ne"
 
-#: models.py:244
+#: models.py:260
 msgid "Decimal number"
 msgstr "Desetinné číslo"
 
-#: models.py:251
+#: models.py:269
 msgid "sort order"
 msgstr "řazení"
 
-#: models.py:252
+#: models.py:271
 msgid "field validations"
 msgstr "ověření pole"
 
-#: models.py:253
+#: models.py:273
 msgid "error message"
 msgstr "chybové hlášení"
 
-#: models.py:253
+#: models.py:273
 msgid "Invalid entry"
 msgstr "Neplatný vstup"
 
-#: models.py:259
+#: models.py:279
 msgid "attribute option"
 msgstr "atribut"
 
-#: models.py:260
+#: models.py:280
 msgid "attribute options"
 msgstr "atributy"
 
-#: models.py:288
+#: models.py:310
 msgid "attribute option translation"
 msgstr "překlad"
 
-#: models.py:289
+#: models.py:311
 msgid "attribute option translations"
 msgstr "překlady"
 
-#: models.py:299
+#: models.py:324
 msgid "language"
 msgstr "jazyk"
 
-#: models.py:301
+#: models.py:326
 msgid "Value"
 msgstr "Hodnota"
 
-#: models.py:312
+#: models.py:337
 msgid "Project attribute"
 msgstr "atribut"
 
-#: models.py:313
+#: models.py:338
 msgid "Project attributes"
 msgstr "atributy"
 
-#: models.py:327
+#: models.py:354
 msgid "featured"
 msgstr "nejlepší"
 
-#: models.py:330
+#: models.py:357
 msgid "Project file"
 msgstr "soubor"
 
-#: models.py:331
+#: models.py:358
 msgid "Project files"
 msgstr "soubory"
 
-#: models.py:337
+#: models.py:365
 #, fuzzy
 msgid "All portfolio categories"
 msgstr "portfolio kategorie"
 
-#: conf/admin.py:7
-msgid "Projects"
-msgstr "Projekty"
-
-#: conf/admin.py:8
-msgid "Extra properties"
-msgstr "Extra vlastnosti"
-
-#: conf/admin.py:9
-msgid "Categories"
-msgstr "Kategorie"
-
-#: conf/admin.py:10
-msgid "Clients"
-msgstr "Klienti"
-
-#: conf/admin.py:11
-msgid "Services"
-msgstr "Služby"
-
-#: templates/folio/project_list.html:49
-msgid "No project in this category."
-msgstr "Žádný projekt v této kategorii."
-
-#: templates/folio/project_list.html:60
-#, python-brace-format
-msgid "photo {current} of {total}"
-msgstr ""
-
-#: templates/folio/project_list.html:61
-msgid "previous"
-msgstr ""
-
-#: templates/folio/project_list.html:62
-msgid "next"
-msgstr ""
-
-#: templates/folio/project_list.html:63
-msgid "close"
-msgstr ""
+#: templates/folio/project_list.html:35
+#, fuzzy
+#| msgid "projects"
+msgid "All projects"
+msgstr "projekty"
 
 #: widget/featuredprojects/models.py:11
 msgid "project count"
@@ -256,13 +220,31 @@ msgstr "počet projektů"
 msgid "show link button"
 msgstr "zobrazit tlačítko"
 
-#: widget/featuredprojects/models.py:19 widget/featuredprojects/models.py:20
+#: widget/featuredprojects/models.py:22 widget/featuredprojects/models.py:23
 msgid "featured projects"
 msgstr "nejlepší projekty"
 
 #: widget/projectcategories/models.py:17 widget/projectcategories/models.py:18
 msgid "project categories"
 msgstr "kategorie"
+
+#~ msgid "Projects"
+#~ msgstr "Projekty"
+
+#~ msgid "Extra properties"
+#~ msgstr "Extra vlastnosti"
+
+#~ msgid "Categories"
+#~ msgstr "Kategorie"
+
+#~ msgid "Clients"
+#~ msgstr "Klienti"
+
+#~ msgid "Services"
+#~ msgstr "Služby"
+
+#~ msgid "No project in this category."
+#~ msgstr "Žádný projekt v této kategorii."
 
 #~ msgid "Portfolio categories"
 #~ msgstr "kategorie"

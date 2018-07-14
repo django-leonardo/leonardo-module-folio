@@ -9,7 +9,7 @@ import feincms.translations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('media', '0003_auto_20170829_1614'),
+        ('media', '__latest__'),
     ]
 
     operations = [
